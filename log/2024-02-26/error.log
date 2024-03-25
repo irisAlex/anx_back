@@ -1,0 +1,12 @@
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 10:47:31.692	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:52	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 10:49:29.951	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:52	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 10:52:05.447	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:52	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 10:54:32.985	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:52	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 10:55:33.970	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:52	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 10:56:19.728	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:52	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 11:00:31.149	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:52	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 11:02:38.979	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 11:04:08.216	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 11:04:44.826	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 11:12:07.068	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/02/26 - 11:13:48.262	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection

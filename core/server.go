@@ -10,6 +10,18 @@ import (
 	"go.uber.org/zap"
 )
 
+const IOCN = `
+┌──────────────────────────────────────────────────────┐
+│                                                      │
+│          Running anx ncp sortware system             │
+│            Welcome  Use Anx NCP System               │
+│          information on anx website                  │
+│          please visit:                               │
+│               https://www.anx.com/                   │
+│                                                      │
+└──────────────────────────────────────────────────────┘
+`
+
 type server interface {
 	ListenAndServe() error
 }
@@ -39,9 +51,7 @@ func RunWindowsServer() {
 	// In order to ensure that the text order output can be deleted
 	time.Sleep(10 * time.Microsecond)
 	global.GVA_LOG.Info("server run success on ", zap.String("address", address))
+	fmt.Printf("%s\n", IOCN)
 
-	fmt.Printf(`
-	欢迎使用 安新 NPC 不合格品限制 %s
-`, address)
 	global.GVA_LOG.Error(s.ListenAndServe().Error())
 }
