@@ -31,7 +31,7 @@ aws-s3:
     s3-force-path-style: false
     disable-ssl: false
 captcha:
-    key-long: 6
+    key-long: 4
     img-width: 240
     img-height: 80
     open-captcha: 0
@@ -149,11 +149,11 @@ oracle:
     log-zap: false
 pgsql:
     prefix: ""
-    port: "5432"
+    port: "16798"
     config: sslmode=disable TimeZone=Asia/Shanghai
-    db-name: axncr
-    username: user
-    password: password
+    db-name: ncr
+    username: anx
+    password: "anx13393133611A"
     path: 8.140.252.134
     engine: ""
     log-mode: error
@@ -215,3 +215,4 @@ zap:
     max-age: 0
     show-line: true
     log-in-console: true
+

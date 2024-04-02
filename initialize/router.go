@@ -1,6 +1,9 @@
 package initialize
 
 import (
+	"net/http"
+	"os"
+
 	"github.com/flipped-aurora/gin-vue-admin/server/docs"
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/middleware"
@@ -8,8 +11,6 @@ import (
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	"net/http"
-	"os"
 )
 
 type justFilesFilesystem struct {
@@ -45,9 +46,12 @@ func Routers() *gin.Engine {
 		Router.Use(gin.Logger())
 	}
 
-	InstallPlugin(Router) // 安装插件
+	//InstallPlugin(Router) // 安装插件
 	systemRouter := router.RouterGroupApp.System
 	exampleRouter := router.RouterGroupApp.Example
+
+	//ncr router
+	ncrRouter := router.RouterGroupApp.Ncr
 	// 如果想要不使用nginx代理前端网页，可以修改 web/.env.production 下的
 	// VUE_APP_BASE_API = /
 	// VUE_APP_BASE_PATH = http://localhost

@@ -1,0 +1,8 @@
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/01 - 08:37:19.069	[34minfo[0m	/Users/libin/gopher/anx/anx_back/initialize/gorm.go:59	register table success
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/01 - 08:37:19.086	[34minfo[0m	/Users/libin/gopher/anx/anx_back/initialize/router.go:66	register swagger handler
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/01 - 08:37:19.094	[34minfo[0m	/Users/libin/gopher/anx/anx_back/initialize/router.go:102	router register success
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/01 - 08:37:19.095	[34minfo[0m	/Users/libin/gopher/anx/anx_back/core/server.go:53	server run success on 	{"address": ":8888"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/01 - 21:10:24.609	[34minfo[0m	/Users/libin/gopher/anx/anx_back/initialize/gorm.go:59	register table success
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/01 - 21:10:24.641	[34minfo[0m	/Users/libin/gopher/anx/anx_back/initialize/router.go:66	register swagger handler
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/01 - 21:10:24.650	[34minfo[0m	/Users/libin/gopher/anx/anx_back/initialize/router.go:102	router register success
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/01 - 21:10:24.651	[34minfo[0m	/Users/libin/gopher/anx/anx_back/core/server.go:53	server run success on 	{"address": ":8888"}

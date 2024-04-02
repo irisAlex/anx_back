@@ -1,0 +1,18 @@
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 08:12:08.662	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_menu.go:268	获取失败!	{"error": "timeout: read tcp 192.168.0.102:58043->8.140.252.134:5432: read: operation timed out"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 08:13:01.319	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_menu.go:29	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 08:18:34.294	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_menu.go:143	添加失败!	{"error": "存在重复name，请修改name"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 08:30:51.611	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_api.go:184	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 08:40:05.564	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_menu.go:29	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 09:22:48.268	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 10:22:30.783	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 10:41:32.356	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_authority.go:172	获取失败!	{"error": "timeout: read tcp 192.168.0.102:50638->8.140.252.134:16798: read: operation timed out"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 10:42:14.136	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_menu.go:29	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 10:43:17.177	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_user.go:56	登陆失败! 用户名不存在或者密码错误!	{"error": "密码错误"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 10:43:29.621	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_user.go:56	登陆失败! 用户名不存在或者密码错误!	{"error": "密码错误"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 10:48:29.002	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_api.go:184	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 10:56:21.540	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_api.go:101	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 10:56:27.264	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_menu.go:29	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 11:07:43.752	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 20:34:46.989	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 20:48:27.189	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_api.go:101	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/02 - 21:41:11.780	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
