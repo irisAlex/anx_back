@@ -81,8 +81,9 @@ func Routers() *gin.Engine {
 		systemRouter.InitBaseRouter(PublicGroup) // 注册基础功能路由 不做鉴权
 		systemRouter.InitInitRouter(PublicGroup) // 自动初始化相关
 	}
+	//.Use(middleware.CasbinHandler())
 	PrivateGroup := Router.Group(global.GVA_CONFIG.System.RouterPrefix)
-	PrivateGroup.Use(middleware.JWTAuth()).Use(middleware.CasbinHandler())
+	PrivateGroup.Use(middleware.JWTAuth())
 	{
 		systemRouter.InitApiRouter(PrivateGroup, PublicGroup)       // 注册功能api路由
 		systemRouter.InitJwtRouter(PrivateGroup)                    // jwt相关路由
@@ -100,6 +101,7 @@ func Routers() *gin.Engine {
 		systemRouter.InitSysExportTemplateRouter(PrivateGroup)      // 导出模板
 		exampleRouter.InitCustomerRouter(PrivateGroup)              // 客户路由
 		exampleRouter.InitFileUploadAndDownloadRouter(PrivateGroup) // 文件上传下载功能路由
+		ncrRouter.InitSupplierApiRouter(PrivateGroup)
 
 	}
 

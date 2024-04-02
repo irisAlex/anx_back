@@ -1,7 +1,0 @@
-[github.com/flipped-aurora/gin-vue-admin/server]2024/03/25 - 13:25:59.750	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_user.go:56	登陆失败! 用户名不存在或者密码错误!	{"error": "db not init"}
-[github.com/flipped-aurora/gin-vue-admin/server]2024/03/25 - 13:26:10.857	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_user.go:56	登陆失败! 用户名不存在或者密码错误!	{"error": "db not init"}
-[github.com/flipped-aurora/gin-vue-admin/server]2024/03/25 - 13:26:20.324	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_user.go:56	登陆失败! 用户名不存在或者密码错误!	{"error": "db not init"}
-[github.com/flipped-aurora/gin-vue-admin/server]2024/03/25 - 13:27:12.360	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_user.go:56	登陆失败! 用户名不存在或者密码错误!	{"error": "db not init"}
-[github.com/flipped-aurora/gin-vue-admin/server]2024/03/25 - 13:28:10.270	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_user.go:56	登陆失败! 用户名不存在或者密码错误!	{"error": "db not init"}
-[github.com/flipped-aurora/gin-vue-admin/server]2024/03/25 - 13:29:04.880	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
-[github.com/flipped-aurora/gin-vue-admin/server]2024/03/25 - 13:32:21.574	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
