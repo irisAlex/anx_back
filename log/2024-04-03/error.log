@@ -25,3 +25,4 @@
 [github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 09:06:00.840	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
 [github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 09:18:31.872	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
 [github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 09:20:38.506	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 17:20:30.834	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_menu.go:29	获取失败!	{"error": "unexpected EOF"}

@@ -4,8 +4,8 @@ import (
 	"github.com/flipped-aurora/gin-vue-admin/server/model/ncr"
 )
 
-type SupplierResponse struct {
-	Ncr ncr.Supplier `json:"supplier"`
+type TypeResponse struct {
+	Ncr ncr.TypeM `json:"typem"`
 }
 
 // type SysAPIListResponse struct {
