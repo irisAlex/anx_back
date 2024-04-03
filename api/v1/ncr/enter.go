@@ -9,5 +9,5 @@ type ApiGroup struct {
 
 var (
 	SupplierService = service.ServiceGroupApp.NcrServiceGroup.SupplierApiService
-	TypeService     = service.ServiceGroupApp.NcrServiceGroup.SupplierApiService
+	TypeService     = service.ServiceGroupApp.NcrServiceGroup.TypeApiService
 )

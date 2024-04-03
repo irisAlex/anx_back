@@ -14,7 +14,7 @@ type TypeApiService struct{}
 
 var TypeApiServiceApp = new(TypeApiService)
 
-func (apiService *TypeApiService) CreateType(supplier ncr.Supplier) (err error) {
+func (apiService *TypeApiService) CreateType(supplier ncr.TypeM) (err error) {
 	return global.GVA_DB.Create(&supplier).Error
 }
 
