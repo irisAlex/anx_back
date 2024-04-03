@@ -11,3 +11,17 @@
 [github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 00:31:33.794	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/ncr/ncr_supplier.go:38	创建失败!	{"error": "timeout: read tcp 192.168.0.100:63151->8.140.252.134:16798: read: operation timed out"}
 [github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 00:33:41.907	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/ncr/ncr_supplier.go:38	创建失败!	{"error": "ERROR: cached plan must not change result type (SQLSTATE 0A000)"}
 [github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 00:36:28.371	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 08:02:33.895	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 08:02:56.096	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/ncr/ncr_supplier.go:52	获取失败!	{"error": "ERROR: column \"api_group\" does not exist (SQLSTATE 42703)"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 08:04:13.514	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 08:05:57.701	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 08:13:50.429	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/ncr/ncr_supplier.go:54	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 08:22:18.794	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/ncr/ncr_supplier.go:54	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 08:29:33.928	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 08:36:58.448	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/system/sys_menu.go:29	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 08:44:27.895	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 08:58:43.919	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/ncr/ncr_supplier.go:56	获取失败!	{"error": "unexpected EOF"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 09:05:28.176	[31merror[0m	/Users/libin/gopher/anx/anx_back/api/v1/ncr/ncr_supplier.go:56	获取失败!	{"error": "ERROR: column \"path\" does not exist (SQLSTATE 42703)"}
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 09:06:00.840	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 09:18:31.872	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
+[github.com/flipped-aurora/gin-vue-admin/server]2024/04/03 - 09:20:38.506	[31merror[0m	/Users/libin/gopher/anx/anx_back/core/server.go:56	accept tcp [::]:8888: use of closed network connection
