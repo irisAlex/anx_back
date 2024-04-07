@@ -18,8 +18,6 @@ import (
 
 type SupplierApiService struct{}
 
-var SupplierApiServiceApp = new(SupplierApiService)
-
 func (apiService *SupplierApiService) CreateApi(supplier ncr.Supplier) (err error) {
 	return global.GVA_DB.Create(&supplier).Error
 }

@@ -10,14 +10,14 @@ import (
 	"gorm.io/gorm"
 )
 
-type TypeApiService struct{}
+type ProjectService struct{}
 
-func (apiService *TypeApiService) CreateType(supplier ncr.TypeM) (err error) {
+func (apiService *ProjectService) CreateProject(supplier ncr.Project) (err error) {
 	return global.GVA_DB.Create(&supplier).Error
 }
 
-func (apiService *TypeApiService) DeleteType(supplier ncr.TypeM) (err error) {
-	var entity ncr.TypeM
+func (apiService *ProjectService) DeleteProject(supplier ncr.Project) (err error) {
+	var entity ncr.Project
 	err = global.GVA_DB.Where("id = ?", supplier.ID).First(&entity).Error // 根据id查询api记录
 	if errors.Is(err, gorm.ErrRecordNotFound) {                           // api记录不存在
 		return err
@@ -33,19 +33,34 @@ func (apiService *TypeApiService) DeleteType(supplier ncr.TypeM) (err error) {
 	return nil
 }
 
-func (apiService *TypeApiService) GetTypeInfoList(api ncr.TypeM, info request.PageInfo, order string, desc bool) (list interface{}, total int64, err error) {
+func (apiService *ProjectService) GetProjectInfoList(api ncr.Project, info request.PageInfo, order string, desc bool) (list interface{}, total int64, err error) {
 	limit := info.PageSize
 	offset := info.PageSize * (info.Page - 1)
-	db := global.GVA_DB.Model(&ncr.TypeM{})
-	var apiList []ncr.TypeM
-	if api.Genre != "" {
-		db = db.Where("genre LIKE ?", "%"+api.Genre+"%")
-	}
+	db := global.GVA_DB.Model(&ncr.Project{})
+	var apiList []ncr.Project
 
 	if api.Name != "" {
 		db = db.Where("name = ?", api.Name)
 	}
+	if api.Describe != "" {
+		db = db.Where("describe = ?", api.Describe)
+	}
 
+	if api.Period > 0 {
+		db = db.Where("period = ?", api.Period)
+	}
+
+	if api.Principal != "" {
+		db = db.Where("principal = ?", api.Principal)
+	}
+
+	if api.Priority != "" {
+		db = db.Where("priority = ?", api.Priority)
+	}
+
+	if !api.CreatedAt.IsZero() {
+		db = db.Where(" created_at = ? ", api.CreatedAt.Format("2006-01-02"))
+	}
 	err = db.Count(&total).Error
 
 	if err != nil {
@@ -58,7 +73,10 @@ func (apiService *TypeApiService) GetTypeInfoList(api ncr.TypeM, info request.Pa
 			// 感谢 Tom4t0 提交漏洞信息
 			orderMap := make(map[string]bool, 5)
 			orderMap["id"] = true
-			orderMap["genre"] = true
+			orderMap["period"] = true
+			orderMap["principal"] = true
+			orderMap["describe"] = true
+			orderMap["priority"] = true
 			orderMap["name"] = true
 			if orderMap[order] {
 				if desc {
@@ -73,18 +91,18 @@ func (apiService *TypeApiService) GetTypeInfoList(api ncr.TypeM, info request.Pa
 
 			err = db.Order(OrderStr).Find(&apiList).Error
 		} else {
-			err = db.Order("id").Find(&apiList).Error
+			err = db.Debug().Order("id").Find(&apiList).Error
 		}
 	}
 	return apiList, total, err
 }
 
-func (apiService *TypeApiService) GetTypeById(id int) (api ncr.TypeM, err error) {
+func (apiService *ProjectService) GetProjectById(id int) (api ncr.Project, err error) {
 	err = global.GVA_DB.Where("id = ?", id).First(&api).Error
 	return
 }
 
-func (apiService *TypeApiService) UpdateType(api ncr.TypeM) (err error) {
+func (apiService *ProjectService) UpdateProject(api ncr.Project) (err error) {
 	err = global.GVA_DB.Save(&api).Error
 	if err != nil {
 		return err

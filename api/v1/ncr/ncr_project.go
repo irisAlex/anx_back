@@ -14,21 +14,21 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type TypeApi struct{}
+type ProjectApi struct{}
 
-func (s *TypeApi) CreateTypeApi(c *gin.Context) {
-	var typeM ncr.TypeM
-	err := c.ShouldBindJSON(&typeM)
+func (s *ProjectApi) CreateProject(c *gin.Context) {
+	var project ncr.Project
+	err := c.ShouldBindJSON(&project)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	err = utils.Verify(typeM, utils.ApiVerify)
+	err = utils.Verify(project, utils.ApiVerify)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	err = TypeService.CreateType(typeM)
+	err = ProjectService.CreateProject(project)
 	if err != nil {
 		global.GVA_LOG.Error("创建失败!", zap.Error(err))
 		response.FailWithMessage("创建失败", c)
@@ -37,8 +37,8 @@ func (s *TypeApi) CreateTypeApi(c *gin.Context) {
 	response.OkWithMessage("创建成功", c)
 }
 
-func (s *TypeApi) GetTypeApiList(c *gin.Context) {
-	var pageInfo ncreq.SearchTypeParams
+func (s *ProjectApi) GetProjectList(c *gin.Context) {
+	var pageInfo ncreq.SearchProjectParams
 	err := c.ShouldBindJSON(&pageInfo)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
@@ -49,7 +49,7 @@ func (s *TypeApi) GetTypeApiList(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	list, total, err := TypeService.GetTypeInfoList(pageInfo.TypeM, pageInfo.PageInfo, pageInfo.OrderKey, pageInfo.Desc)
+	list, total, err := ProjectService.GetProjectInfoList(pageInfo.Project, pageInfo.PageInfo, pageInfo.OrderKey, pageInfo.Desc)
 	if err != nil {
 		global.GVA_LOG.Error("获取失败!", zap.Error(err))
 		response.FailWithMessage("获取失败", c)
@@ -63,7 +63,7 @@ func (s *TypeApi) GetTypeApiList(c *gin.Context) {
 	}, "获取成功", c)
 }
 
-func (s *TypeApi) GetTypeById(c *gin.Context) {
+func (s *ProjectApi) GetProjectById(c *gin.Context) {
 	var idInfo request.GetById
 	err := c.ShouldBindJSON(&idInfo)
 	if err != nil {
@@ -75,17 +75,17 @@ func (s *TypeApi) GetTypeById(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	api, err := TypeService.GetTypeById(idInfo.ID)
+	api, err := ProjectService.GetProjectById(idInfo.ID)
 	if err != nil {
 		global.GVA_LOG.Error("获取失败!", zap.Error(err))
 		response.FailWithMessage("获取失败", c)
 		return
 	}
-	response.OkWithDetailed(ncrep.TypeResponse{Ncr: api}, "获取成功", c)
+	response.OkWithDetailed(ncrep.ProjectResponse{Ncr: api}, "获取成功", c)
 }
 
-func (s *TypeApi) DeleteType(c *gin.Context) {
-	var api ncr.TypeM
+func (s *ProjectApi) DeleteProject(c *gin.Context) {
+	var api ncr.Project
 	err := c.ShouldBindJSON(&api)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
@@ -96,7 +96,7 @@ func (s *TypeApi) DeleteType(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	err = TypeService.DeleteType(api)
+	err = ProjectService.DeleteProject(api)
 	if err != nil {
 		global.GVA_LOG.Error("删除失败!", zap.Error(err))
 		response.FailWithMessage("删除失败", c)
@@ -105,8 +105,8 @@ func (s *TypeApi) DeleteType(c *gin.Context) {
 	response.OkWithMessage("删除成功", c)
 }
 
-func (s *TypeApi) UpdateType(c *gin.Context) {
-	var api ncr.TypeM
+func (s *ProjectApi) UpdateProject(c *gin.Context) {
+	var api ncr.Project
 	err := c.ShouldBindJSON(&api)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
@@ -117,7 +117,7 @@ func (s *TypeApi) UpdateType(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	err = TypeService.UpdateType(api)
+	err = ProjectService.UpdateProject(api)
 	if err != nil {
 		global.GVA_LOG.Error("修改失败!", zap.Error(err))
 		response.FailWithMessage("修改失败", c)

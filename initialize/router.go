@@ -101,8 +101,10 @@ func Routers() *gin.Engine {
 		systemRouter.InitSysExportTemplateRouter(PrivateGroup)      // 导出模板
 		exampleRouter.InitCustomerRouter(PrivateGroup)              // 客户路由
 		exampleRouter.InitFileUploadAndDownloadRouter(PrivateGroup) // 文件上传下载功能路由
-		ncrRouter.InitSupplierApiRouter(PrivateGroup)               //供应商管理
-		ncrRouter.InitTypeApiRouter(PrivateGroup)                   //类别管理
+		ncrRouter.InitSupplierRouter(PrivateGroup)                  //供应商管理
+		ncrRouter.InitTypeRouter(PrivateGroup)                      //类别管理
+		ncrRouter.InitProjectRouter(PrivateGroup)
+		ncrRouter.InitManageRouter(PrivateGroup)
 
 	}
 
