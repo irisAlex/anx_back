@@ -42,8 +42,8 @@ func (apiService *ManageService) GetManageInfoList(api ncr.Manage, info request.
 	if api.Department != "" {
 		db = db.Where("department = ?", api.Department)
 	}
-	if api.Type_M != "" {
-		db = db.Where("type_m = ?", api.Type_M)
+	if api.Mold != "" {
+		db = db.Where("mold = ?", api.Mold)
 	}
 
 	if api.Category != "" {

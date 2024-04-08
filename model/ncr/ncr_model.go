@@ -44,13 +44,13 @@ type Manage struct {
 	global.GVA_MODEL
 	Serialnumber                  string    `json:"serialnumber" gorm:"comment:类别"`                  // 类别
 	Department                    string    `json:"department" gorm:"comment:类别"`                    // 类别
-	Type_M                        string    `json:"type_m" gorm:"comment:类别"`                        // 类别
+	Mold                          string    `json:"mold" gorm:"comment:类别"`                          // 类别
 	Category                      string    `json:"category" gorm:"comment:类别"`                      // 类别
 	Project                       string    `json:"project" gorm:"comment:类别"`                       // 类别
 	Checkout_Name                 string    `json:"checkout_name" gorm:"comment:类别"`                 // 类别
 	Checkout_Number               string    `json:"checkout_number" gorm:"comment:名称"`               // 名称
-	Graph_Number                  int64     `json:"graph_number" gorm:"comment:名称"`                  // 名称
-	Version_Number                int64     `json:"version_number" gorm:"comment:名称"`                // 名称
+	Graph_Number                  string    `json:"graph_number" gorm:"comment:名称"`                  // 名称
+	Version_Number                string    `json:"version_number" gorm:"comment:名称"`                // 名称
 	Purchase_Order                string    `json:"purchase_order" gorm:"comment:名称"`                // 名称
 	Production_Order              string    `json:"production_order" gorm:"comment:名称"`              // 名称
 	Delivery_Order                string    `json:"delivery_order" gorm:"comment:名称"`                // 名称
