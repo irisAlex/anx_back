@@ -53,7 +53,7 @@ func (apiService *ManageService) GetManageInfoList(api ncr.Manage, info request.
 	if api.Checkout_Name != "" {
 		db = db.Where("checkout_name = ?", api.Checkout_Name)
 	}
-	if api.Checkout_Number != 0 {
+	if api.Checkout_Number != "" {
 		db = db.Where("checkout_number = ?", api.Checkout_Number)
 	}
 

@@ -48,12 +48,12 @@ type Manage struct {
 	Category                      string    `json:"category" gorm:"comment:类别"`                      // 类别
 	Project                       string    `json:"project" gorm:"comment:类别"`                       // 类别
 	Checkout_Name                 string    `json:"checkout_name" gorm:"comment:类别"`                 // 类别
-	Checkout_Number               int64     `json:"checkout_number" gorm:"comment:名称"`               // 名称
+	Checkout_Number               string    `json:"checkout_number" gorm:"comment:名称"`               // 名称
 	Graph_Number                  int64     `json:"graph_number" gorm:"comment:名称"`                  // 名称
 	Version_Number                int64     `json:"version_number" gorm:"comment:名称"`                // 名称
-	Purchase_Order                int64     `json:"purchase_order" gorm:"comment:名称"`                // 名称
-	Production_Order              int64     `json:"production_order" gorm:"comment:名称"`              // 名称
-	Delivery_Order                int64     `json:"delivery_order" gorm:"comment:名称"`                // 名称
+	Purchase_Order                string    `json:"purchase_order" gorm:"comment:名称"`                // 名称
+	Production_Order              string    `json:"production_order" gorm:"comment:名称"`              // 名称
+	Delivery_Order                string    `json:"delivery_order" gorm:"comment:名称"`                // 名称
 	Packages_Number               int64     `json:"packages_number" gorm:"comment:名称"`               // 名称
 	Reject_Packages_Number        int64     `json:"reject_packages_number" gorm:"comment:名称"`        // 名称
 	Sample_Checkout_Number        int64     `json:"sample_checkout_number" gorm:"comment:名称"`        // 名称

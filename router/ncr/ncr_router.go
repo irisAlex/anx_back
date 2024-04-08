@@ -78,15 +78,16 @@ func (s *ManageRouter) InitManageRouter(Router *gin.RouterGroup) {
 	typeApiRouter := Router.Group("manage").Use(middleware.OperationRecord())
 	typeApiRouterWithoutRecord := Router.Group("manage")
 
-	typeRouterApi := v1.ApiGroupApp.NcrApiGroup.ProjectApi
+	typeRouterApi := v1.ApiGroupApp.NcrApiGroup.ManageApi
 	{
-		typeApiRouter.POST("createManage", typeRouterApi.CreateProject)   // 创建Api
-		typeApiRouter.POST("deleteManage", typeRouterApi.DeleteProject)   // 删除Api
-		typeApiRouter.POST("getManageById", typeRouterApi.GetProjectById) // 获取单条Api消息
-		typeApiRouter.POST("updateManage", typeRouterApi.UpdateProject)   // 更新api
+		typeApiRouter.POST("createManage", typeRouterApi.CreateManage)   // 创建Api
+		typeApiRouter.POST("deleteManage", typeRouterApi.DeleteManage)   // 删除Api
+		typeApiRouter.POST("getManageById", typeRouterApi.GetManageById) // 获取单条Api消息
+		typeApiRouter.POST("updateManage", typeRouterApi.UpdateManage)   // 更新api
 		// supplierApiRouter.DELETE("deleteApisByIds", supplierRouterApi.DeleteApisByIds) // 删除选中api
 	}
 	{
-		typeApiRouterWithoutRecord.POST("getAllManageList", typeRouterApi.GetProjectList) // 获取所有api
+		typeApiRouterWithoutRecord.POST("getAllManageList", typeRouterApi.GetManageList) // 获取所有api
 	}
+
 }

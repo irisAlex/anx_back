@@ -1,6 +1,8 @@
 package ncr
 
 import (
+	"fmt"
+
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/request"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/response"
@@ -23,6 +25,9 @@ func (s *ManageApi) CreateManage(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
+
+	fmt.Println(Manage)
+
 	err = utils.Verify(Manage, utils.ApiVerify)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
