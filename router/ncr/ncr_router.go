@@ -84,6 +84,8 @@ func (s *ManageRouter) InitManageRouter(Router *gin.RouterGroup) {
 		typeApiRouter.POST("deleteManage", typeRouterApi.DeleteManage)   // 删除Api
 		typeApiRouter.POST("getManageById", typeRouterApi.GetManageById) // 获取单条Api消息
 		typeApiRouter.POST("updateManage", typeRouterApi.UpdateManage)   // 更新api
+		typeApiRouter.POST("updateSetStatus", typeRouterApi.SetStatus)   // 更新api
+
 		// supplierApiRouter.DELETE("deleteApisByIds", supplierRouterApi.DeleteApisByIds) // 删除选中api
 	}
 	{

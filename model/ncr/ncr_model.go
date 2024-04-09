@@ -82,6 +82,11 @@ type Manage struct {
 	// 类别
 }
 
+type SetStatus struct {
+	ID     int64  `json:"id"`
+	Status string `json:"status"`
+}
+
 func (Manage) TableName() string {
 	return "ncr_product_manage"
 }

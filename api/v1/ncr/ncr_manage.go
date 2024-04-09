@@ -131,8 +131,8 @@ func (s *ManageApi) UpdateManage(c *gin.Context) {
 	response.OkWithMessage("修改成功", c)
 }
 
-func (s *ManageApi) SetStatus() {
-	var api ncr.Manage
+func (s *ManageApi) SetStatus(c *gin.Context) {
+	var api ncr.SetStatus
 	err := c.ShouldBindJSON(&api)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
@@ -143,11 +143,11 @@ func (s *ManageApi) SetStatus() {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	err = ManageService.SetNcrStatus(api)
+	err = ManageService.SetNcrStatus(uint(api.ID), api.Status)
 	if err != nil {
-		global.GVA_LOG.Error("修改失败!", zap.Error(err))
-		response.FailWithMessage("修改失败", c)
+		global.GVA_LOG.Error("更新状态失败!", zap.Error(err))
+		response.FailWithMessage("更新状态失败", c)
 		return
 	}
-	response.OkWithMessage("修改成功", c)
+	response.OkWithMessage("更新状态成功", c)
 }
