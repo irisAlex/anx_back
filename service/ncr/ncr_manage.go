@@ -68,6 +68,11 @@ func (apiService *ManageService) GetManageInfoList(api ncr.Manage, info request.
 	if !api.CreatedAt.IsZero() {
 		db = db.Where(" created_at = ? ", api.CreatedAt.Format("2006-01-02"))
 	}
+
+	if info.Keyword != "" {
+		db = db.Where(" operation_type = ? ", info.Keyword)
+
+	}
 	err = db.Count(&total).Error
 
 	if err != nil {

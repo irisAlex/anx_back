@@ -72,8 +72,14 @@ type Manage struct {
 	Rework_Process                string    `json:"rework_process" gorm:"comment:类别"`                // 类别
 	Rework_Plan_Date              time.Time `json:"rework_plan_date" gorm:"comment:名称"`              // 名称,
 	Rework_Desc                   string    `json:"rework_desc" gorm:"comment:类别"`                   // 类别
-	Rework_Attachment             string    `json:"rework_attachment" gorm:"comment:类别"`             // 类别
-	Operation_Type                int64     `json:"operation_type" gorm:"comment:名称"`                // 名称
+	Rework_Attachment             string    `json:"rework_attachment" gorm:"comment:类别"`
+	Repair_Plan_Date              string    `json:"repair_plan_date" gorm:"comment:类别"`
+	Repair_Desc                   string    `json:"repair_desc" gorm:"comment:类别"`
+	Repair_Attachment             string    `json:"repair_attachment" gorm:"comment:类别"`
+	Parts_Desc                    string    `json:"parts_desc" gorm:"comment:类别"`
+	Series                        string    `json:"series" gorm:"comment:类别"`
+	Operation_Type                string    `json:"operation_type" gorm:"comment:类别"`
+	// 类别
 }
 
 func (Manage) TableName() string {
