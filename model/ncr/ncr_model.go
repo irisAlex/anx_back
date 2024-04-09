@@ -79,6 +79,7 @@ type Manage struct {
 	Parts_Desc                    string    `json:"parts_desc" gorm:"comment:类别"`
 	Series                        string    `json:"series" gorm:"comment:类别"`
 	Operation_Type                string    `json:"operation_type" gorm:"comment:类别"`
+	Status                        string    `json:"status" gorm:"comment:类别"`
 	// 类别
 }
 
