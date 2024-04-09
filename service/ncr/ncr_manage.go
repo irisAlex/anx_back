@@ -116,3 +116,9 @@ func (apiService *ManageService) UpdateManage(api ncr.Manage) (err error) {
 	}
 	return nil
 }
+
+
+func (apiService *ManageService) SetNcrStatus(ID uint , st string) (err error){
+	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", ID).Update("status", st).Error
+	return err
+}

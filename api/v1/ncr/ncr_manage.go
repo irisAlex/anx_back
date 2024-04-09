@@ -1,6 +1,8 @@
 package ncr
 
 import (
+	"fmt"
+
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/request"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/response"
@@ -23,6 +25,8 @@ func (s *ManageApi) CreateManage(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
+
+	fmt.Println(Manage)
 
 	err = utils.Verify(Manage, utils.ApiVerify)
 	if err != nil {
@@ -119,6 +123,27 @@ func (s *ManageApi) UpdateManage(c *gin.Context) {
 		return
 	}
 	err = ManageService.UpdateManage(api)
+	if err != nil {
+		global.GVA_LOG.Error("修改失败!", zap.Error(err))
+		response.FailWithMessage("修改失败", c)
+		return
+	}
+	response.OkWithMessage("修改成功", c)
+}
+
+func (s *ManageApi) SetStatus() {
+	var api ncr.Manage
+	err := c.ShouldBindJSON(&api)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	err = utils.Verify(api, utils.ApiVerify)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	err = ManageService.SetNcrStatus(api)
 	if err != nil {
 		global.GVA_LOG.Error("修改失败!", zap.Error(err))
 		response.FailWithMessage("修改失败", c)
