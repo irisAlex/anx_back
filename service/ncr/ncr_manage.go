@@ -73,6 +73,11 @@ func (apiService *ManageService) GetManageInfoList(api ncr.Manage, info request.
 		db = db.Where(" operation_type = ? ", info.Keyword)
 
 	}
+
+	if api.Operation_Type != "" {
+		db = db.Where(" operation_type = ? ", api.Operation_Type)
+
+	}
 	err = db.Count(&total).Error
 
 	if err != nil {
@@ -117,8 +122,7 @@ func (apiService *ManageService) UpdateManage(api ncr.Manage) (err error) {
 	return nil
 }
 
-
-func (apiService *ManageService) SetNcrStatus(ID uint , st string) (err error){
+func (apiService *ManageService) SetNcrStatus(ID uint, st string) (err error) {
 	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", ID).Update("status", st).Error
 	return err
 }
