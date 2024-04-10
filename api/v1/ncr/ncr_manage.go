@@ -164,7 +164,7 @@ func (s *ManageApi) SetPassDate(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	err = ManageService.SetNcrStatus(uint(api.ID), api.Operation_Type)
+	err = ManageService.SetNcrPassDate(uint(api.ID), api.Operation_Type)
 	if err != nil {
 		global.GVA_LOG.Error("更新放行时间失败!", zap.Error(err))
 		response.FailWithMessage("更新放行时间失败", c)
