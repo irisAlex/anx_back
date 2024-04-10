@@ -151,3 +151,24 @@ func (s *ManageApi) SetStatus(c *gin.Context) {
 	}
 	response.OkWithMessage("更新状态成功", c)
 }
+
+func (s *ManageApi) UpdateParts(c *gin.Context) {
+	var api ncr.Manage
+	err := c.ShouldBindJSON(&api)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	err = utils.Verify(api, utils.ApiVerify)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	err = ManageService.UpdateParts(api)
+	if err != nil {
+		global.GVA_LOG.Error("更新配做失败!", zap.Error(err))
+		response.FailWithMessage("更新配做失败", c)
+		return
+	}
+	response.OkWithMessage("更新配做成功", c)
+}

@@ -80,6 +80,7 @@ type Manage struct {
 	Series                        string    `json:"series" gorm:"comment:类别"`
 	Operation_Type                string    `json:"operation_type" gorm:"comment:类别"`
 	Status                        string    `json:"status" gorm:"comment:类别"`
+	Deferred_Date                 time.Time `json:"deferred_date" gorm:"comment:类别"`
 	// 类别
 }
 

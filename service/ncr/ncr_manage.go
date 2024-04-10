@@ -69,6 +69,10 @@ func (apiService *ManageService) GetManageInfoList(api ncr.Manage, info request.
 		db = db.Where(" created_at = ? ", api.CreatedAt.Format("2006-01-02"))
 	}
 
+	if !api.Deferred_Date.IsZero() {
+		db = db.Where(" deferred_date = ? ", api.Deferred_Date.Format("2006-01-02"))
+	}
+
 	if info.Keyword != "" {
 		db = db.Where(" operation_type = ? ", info.Keyword)
 
@@ -124,5 +128,10 @@ func (apiService *ManageService) UpdateManage(api ncr.Manage) (err error) {
 
 func (apiService *ManageService) SetNcrStatus(ID uint, st string) (err error) {
 	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", ID).Update("status", st).Error
+	return err
+}
+
+func (apiService *ManageService) UpdateParts(api ncr.Manage) (err error) {
+	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", api.ID).Updates(ncr.Manage{Status: api.Status, Deferred_Date: api.Deferred_Date}).Error
 	return err
 }
