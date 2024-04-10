@@ -98,3 +98,30 @@ type SetPassDatte struct {
 func (Manage) TableName() string {
 	return "ncr_product_manage"
 }
+
+type Complaint struct {
+	global.GVA_MODEL
+	Product_Name           string    `json:"product_name" gorm:"comment:类别"`
+	Product_Sequence       string    `json:"product_sequence" gorm:"comment:类别"`
+	Client_Name            string    `json:"client_name" gorm:"comment:类别"`
+	Complaint_Name         string    `json:"complaint_name" gorm:"comment:类别"`
+	Project_Name           string    `json:"project_name" gorm:"comment:类别"`
+	Status                 string    `json:"Status" gorm:"comment:类别"`
+	Checkout_Number        string    `json:"checkout_number" gorm:"comment:类别"`
+	Interior_Feedback_Name string    `json:"interior_feedback_name" gorm:"comment:类别"`
+	Interior_Feedback_Unit string    `json:"interior_feedback_unit" gorm:"comment:类别"`
+	Issue_Desc             string    `json:"issue_desc" gorm:"comment:类别"`
+	Issue_Level            string    `json:"issue_level" gorm:"comment:类别"`
+	Short_Plan_Date        time.Time `json:"short_plan_date" gorm:"comment:类别"`
+	Cause_Desc             string    `json:"cause_desc" gorm:"comment:类别"`
+	Complaint_Order        string    `json:"complaint_order" gorm:"comment:类别"`
+	Principal_Name         time.Time `json:"principal_name" gorm:"comment:类别"`
+	Cost                   float64   `json:"Cost" gorm:"comment:类别"`
+	Rectify_Date           time.Time `json:"rectify_date" gorm:"comment:类别"`
+	Submit_Date            time.Time `json:"submit_date" gorm:"comment:类别"`
+	Close_Date             time.Time `json:"close_date" gorm:"comment:类别"`
+}
+
+func (Complaint) TableName() string {
+	return "ncr_complaint"
+}

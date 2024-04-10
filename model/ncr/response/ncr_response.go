@@ -17,3 +17,6 @@ type ProjectResponse struct {
 type ManageResponse struct {
 	Ncr ncr.Manage `json:"manage"`
 }
+type ComplaintResponse struct {
+	Ncr ncr.Complaint `json:"compliant"`
+}

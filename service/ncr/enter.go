@@ -5,4 +5,5 @@ type ServiceGroup struct {
 	TypeApiService
 	ProjectService
 	ManageService
+	ComplaintService
 }

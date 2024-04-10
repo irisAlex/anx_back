@@ -105,6 +105,7 @@ func Routers() *gin.Engine {
 		ncrRouter.InitTypeRouter(PrivateGroup)                      //类别管理
 		ncrRouter.InitProjectRouter(PrivateGroup)
 		ncrRouter.InitManageRouter(PrivateGroup)
+		ncrRouter.InitComplaintRouter(PrivateGroup)
 
 	}
 

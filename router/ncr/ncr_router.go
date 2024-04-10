@@ -93,3 +93,23 @@ func (s *ManageRouter) InitManageRouter(Router *gin.RouterGroup) {
 	}
 
 }
+
+type ComplaintRouter struct{}
+
+func (s *ComplaintRouter) InitComplaintRouter(Router *gin.RouterGroup) {
+	typeApiRouter := Router.Group("complaint").Use(middleware.OperationRecord())
+	typeApiRouterWithoutRecord := Router.Group("complaint")
+
+	typeRouterApi := v1.ApiGroupApp.NcrApiGroup.ComplaintApi
+	{
+		typeApiRouter.POST("createComplaint", typeRouterApi.CreateComplaint)   // 创建Api
+		typeApiRouter.POST("deleteComplaint", typeRouterApi.DeleteComplaint)   // 删除Api
+		typeApiRouter.POST("getComplaintById", typeRouterApi.GetComplaintById) // 获取单条Api消息
+		typeApiRouter.POST("updateComplaint", typeRouterApi.UpdateComplaint)   // 更新api
+		typeApiRouter.POST("updateSetStatus", typeRouterApi.SetStatus)         // 更新api
+	}
+	{
+		typeApiRouterWithoutRecord.POST("getAllComplaintList", typeRouterApi.GetComplaintList) // 获取所有api
+	}
+
+}
