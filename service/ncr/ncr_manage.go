@@ -3,6 +3,7 @@ package ncr
 import (
 	"errors"
 	"fmt"
+	"time"
 
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/request"
@@ -128,6 +129,11 @@ func (apiService *ManageService) UpdateManage(api ncr.Manage) (err error) {
 
 func (apiService *ManageService) SetNcrStatus(ID uint, st string) (err error) {
 	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", ID).Update("status", st).Error
+	return err
+}
+
+func (apiService *ManageService) SetNcrPassDate(ID uint, op_type string) (err error) {
+	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", ID).Updates(ncr.Manage{Operation_Type: op_type, Pass_Date: time.Now()}).Error
 	return err
 }
 

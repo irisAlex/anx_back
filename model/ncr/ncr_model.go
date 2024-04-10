@@ -78,15 +78,21 @@ type Manage struct {
 	Repair_Attachment             string    `json:"repair_attachment" gorm:"comment:类别"`
 	Parts_Desc                    string    `json:"parts_desc" gorm:"comment:类别"`
 	Series                        string    `json:"series" gorm:"comment:类别"`
-	Operation_Type                string    `json:"operation_type" gorm:"comment:类别"`
+	Operation_Type                string    `json:"operation_type" gorm:"comment:类别"` //1 返工 2 返修  3 配做 4 让步放行
 	Status                        string    `json:"status" gorm:"comment:类别"`
 	Deferred_Date                 time.Time `json:"deferred_date" gorm:"comment:类别"`
+	Pass_Date                     time.Time `json:"pass_date" gorm:"comment:类别"`
 	// 类别
 }
 
 type SetStatus struct {
 	ID     int64  `json:"id"`
 	Status string `json:"status"`
+}
+
+type SetPassDatte struct {
+	ID             int64  `json:"id"`
+	Operation_Type string `json:"operation_type" gorm:"comment:类别"` //1 返工 2 返修  3 配做 4 让步放行
 }
 
 func (Manage) TableName() string {

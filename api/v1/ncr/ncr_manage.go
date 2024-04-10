@@ -152,6 +152,27 @@ func (s *ManageApi) SetStatus(c *gin.Context) {
 	response.OkWithMessage("更新状态成功", c)
 }
 
+func (s *ManageApi) SetPassDate(c *gin.Context) {
+	var api ncr.SetPassDatte
+	err := c.ShouldBindJSON(&api)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	err = utils.Verify(api, utils.ApiVerify)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	err = ManageService.SetNcrStatus(uint(api.ID), api.Operation_Type)
+	if err != nil {
+		global.GVA_LOG.Error("更新放行时间失败!", zap.Error(err))
+		response.FailWithMessage("更新放行时间失败", c)
+		return
+	}
+	response.OkWithMessage("更新放行时间成功", c)
+}
+
 func (s *ManageApi) UpdateParts(c *gin.Context) {
 	var api ncr.Manage
 	err := c.ShouldBindJSON(&api)
