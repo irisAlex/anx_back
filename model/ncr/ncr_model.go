@@ -120,7 +120,7 @@ type Complaint struct {
 	Rectify_Date           time.Time `json:"rectify_date" gorm:"comment:类别"`
 	Submit_Date            time.Time `json:"submit_date" gorm:"comment:类别"`
 	Close_Date             time.Time `json:"close_date" gorm:"comment:类别"`
-	Rectify                time.Time `json:"rectify " gorm:"comment:类别"`
+	Rectify                string    `json:"rectify " gorm:"comment:类别"`
 }
 
 func (Complaint) TableName() string {
