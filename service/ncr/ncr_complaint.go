@@ -40,14 +40,14 @@ func (apiService *ComplaintService) GetComplaintInfoList(api ncr.Complaint, info
 	var apiList []ncr.Complaint
 
 	if api.Interior_Feedback_Name != "" {
-		db = db.Where("department = ?", api.Interior_Feedback_Name)
+		db = db.Where("interior_feedback_name = ?", api.Interior_Feedback_Name)
 	}
 	if api.Interior_Feedback_Unit != "" {
-		db = db.Where("mold = ?", api.Interior_Feedback_Unit)
+		db = db.Where("interior_feedback_unit = ?", api.Interior_Feedback_Unit)
 	}
 
 	if api.Product_Sequence != "" {
-		db = db.Where("category = ?", api.Product_Sequence)
+		db = db.Where("product_sequence = ?", api.Product_Sequence)
 	}
 
 	if api.Product_Name != "" {
