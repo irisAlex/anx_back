@@ -115,7 +115,7 @@ type Complaint struct {
 	Short_Plan_Date        time.Time `json:"short_plan_date" gorm:"comment:类别"`
 	Cause_Desc             string    `json:"cause_desc" gorm:"comment:类别"`
 	Complaint_Order        string    `json:"complaint_order" gorm:"comment:类别"`
-	Principal_Name         time.Time `json:"principal_name" gorm:"comment:类别"`
+	Principal_Name         string    `json:"principal_name" gorm:"comment:类别"`
 	Cost                   float64   `json:"Cost" gorm:"comment:类别"`
 	Rectify_Date           time.Time `json:"rectify_date" gorm:"comment:类别"`
 	Submit_Date            time.Time `json:"submit_date" gorm:"comment:类别"`
