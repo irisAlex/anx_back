@@ -81,6 +81,8 @@ type Manage struct {
 	Station                       string    `json:"station" gorm:"comment:类别"`        //1 返工 2 返修  3 配做 4 让步放行
 	Operation_Type                string    `json:"operation_type" gorm:"comment:类别"` //1 返工 2 返修  3 配做 4 让步放行
 	Deferred_Date                 time.Time `json:"deferred_date" gorm:"comment:类别"`
+	Status                        string    `json:"status" gorm:"comment:类别"`
+
 	// 类别
 }
 
