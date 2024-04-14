@@ -87,6 +87,17 @@ type Manage struct {
 	Parts_Desc                    string    `json:"parts_desc" gorm:"comment:类别"`
 	Series                        string    `json:"series" gorm:"comment:类别"`
 	Pass_Date                     time.Time `json:"deferpass_datered_date" gorm:"comment:类别"`
+	A3_Principal                  string    `json:"a3_principal" gorm:"comment:类别"`
+	A3_Team_Top                   string    `json:"a3_principal" gorm:"comment:类别"`
+	A3_Team_Member                string    `json:"a3_team_member" gorm:"comment:类别"`
+	A3_Issue_Desc                 string    `json:"a3_issue_desc" gorm:"comment:类别"`
+	A3_Contingency                string    `json:"a3_contingency" gorm:"comment:类别"`
+	A3_Cause                      string    `json:"a3_cause" gorm:"comment:类别"`
+	A3_Affirm                     string    `json:"a3_affirm" gorm:"comment:类别"`
+	A3_Correct                    string    `json:"a3_correct" gorm:"comment:类别"`
+	A3_Verify                     string    `json:"a3_verify" gorm:"comment:类别"`
+	A3_Result                     string    `json:"a3_result" gorm:"comment:类别"`
+	A3_End                        string    `json:"a3_end" gorm:"comment:类别"`
 	// 类别
 }
 
