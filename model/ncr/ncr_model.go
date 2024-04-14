@@ -78,7 +78,9 @@ type Manage struct {
 	Find_Addr                     string    `json:"find_addr" gorm:"comment:类别"`
 	Find_Process                  string    `json:"find_process" gorm:"comment:类别"`
 	Defect_Problem                string    `json:"defect_problem" gorm:"comment:类别"`
-	Station                       string    `json:"station" gorm:"comment:类别"` //1 返工 2 返修  3 配做 4 让步放行
+	Station                       string    `json:"station" gorm:"comment:类别"`        //1 返工 2 返修  3 配做 4 让步放行
+	Operation_Type                string    `json:"operation_type" gorm:"comment:类别"` //1 返工 2 返修  3 配做 4 让步放行
+	Deferred_Date                 time.Time `json:"deferred_date" gorm:"comment:类别"`
 	// 类别
 }
 
