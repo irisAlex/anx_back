@@ -88,7 +88,7 @@ type Manage struct {
 	Series                        string    `json:"series" gorm:"comment:类别"`
 	Pass_Date                     time.Time `json:"deferpass_datered_date" gorm:"comment:类别"`
 	A3_Principal                  string    `json:"a3_principal" gorm:"comment:类别"`
-	A3_Team_Top                   string    `json:"a3_principal" gorm:"comment:类别"`
+	A3_Team_Top                   string    `json:"a3_team_top" gorm:"comment:类别"`
 	A3_Team_Member                string    `json:"a3_team_member" gorm:"comment:类别"`
 	A3_Issue_Desc                 string    `json:"a3_issue_desc" gorm:"comment:类别"`
 	A3_Contingency                string    `json:"a3_contingency" gorm:"comment:类别"`
