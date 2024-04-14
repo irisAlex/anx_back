@@ -82,7 +82,11 @@ type Manage struct {
 	Operation_Type                string    `json:"operation_type" gorm:"comment:类别"` //1 返工 2 返修  3 配做 4 让步放行
 	Deferred_Date                 time.Time `json:"deferred_date" gorm:"comment:类别"`
 	Status                        string    `json:"status" gorm:"comment:类别"`
-
+	Repair_Desc                   string    `json:"repair_desc" gorm:"comment:类别"`
+	Repair_Attachment             string    `json:"repair_attachment" gorm:"comment:类别"`
+	Parts_Desc                    string    `json:"parts_desc" gorm:"comment:类别"`
+	Series                        string    `json:"series" gorm:"comment:类别"`
+	Pass_Date                     time.Time `json:"deferpass_datered_date" gorm:"comment:类别"`
 	// 类别
 }
 
