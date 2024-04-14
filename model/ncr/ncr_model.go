@@ -74,14 +74,11 @@ type Manage struct {
 	Rework_Desc                   string    `json:"rework_desc" gorm:"comment:类别"`                   // 类别
 	Rework_Attachment             string    `json:"rework_attachment" gorm:"comment:类别"`
 	Repair_Plan_Date              string    `json:"repair_plan_date" gorm:"comment:类别"`
-	Repair_Desc                   string    `json:"repair_desc" gorm:"comment:类别"`
-	Repair_Attachment             string    `json:"repair_attachment" gorm:"comment:类别"`
-	Parts_Desc                    string    `json:"parts_desc" gorm:"comment:类别"`
-	Series                        string    `json:"series" gorm:"comment:类别"`
-	Operation_Type                string    `json:"operation_type" gorm:"comment:类别"` //1 返工 2 返修  3 配做 4 让步放行
-	Status                        string    `json:"status" gorm:"comment:类别"`
-	Deferred_Date                 time.Time `json:"deferred_date" gorm:"comment:类别"`
-	Pass_Date                     time.Time `json:"pass_date" gorm:"comment:类别"`
+	Area                          string    `json:"area" gorm:"comment:类别"`
+	Find_Addr                     string    `json:"find_addr" gorm:"comment:类别"`
+	Find_Process                  string    `json:"find_process" gorm:"comment:类别"`
+	Defect_Problem                string    `json:"defect_problem" gorm:"comment:类别"`
+	Station                       string    `json:"station" gorm:"comment:类别"` //1 返工 2 返修  3 配做 4 让步放行
 	// 类别
 }
 
