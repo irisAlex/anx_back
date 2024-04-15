@@ -99,7 +99,7 @@ type Manage struct {
 	A3_Result                     string    `json:"a3_result" gorm:"comment:类别"`
 	A3_End                        string    `json:"a3_end" gorm:"comment:类别"`
 	A3_Setting                    string    `json:"a3_setting" gorm:"comment:类别"`
-
+	A3_Step                       int64     `json:"a3_step" gorm:"comment:类别"`
 	// 类别
 }
 
