@@ -71,9 +71,12 @@ func (apiService *MessageService) GetMessageInfoList(api ncr.Message, info reque
 }
 
 func (apiService *MessageService) GetMessageByname(name string) (list interface{}, err error) {
+
+	fmt.Println(name)
+	fmt.Println(3333)
 	var apiList []ncr.Message
 	err = global.GVA_DB.Where("message_receive_name = ?", name).Find(&apiList).Error
-
+	fmt.Println(4444)
 	fmt.Println(apiList)
 	return apiList, err
 }
