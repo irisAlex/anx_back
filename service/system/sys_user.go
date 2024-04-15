@@ -86,6 +86,9 @@ func (userService *UserService) GetUserInfoList(info request.PageInfo) (list int
 	limit := info.PageSize
 	offset := info.PageSize * (info.Page - 1)
 	db := global.GVA_DB.Model(&system.SysUser{})
+	if info.Authority_Id > 0 {
+		db = db.Where(" authority_id = ? ", info.Authority_Id)
+	}
 	var userList []system.SysUser
 	err = db.Count(&total).Error
 	if err != nil {
