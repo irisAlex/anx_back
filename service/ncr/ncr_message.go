@@ -70,9 +70,10 @@ func (apiService *MessageService) GetMessageInfoList(api ncr.Message, info reque
 	return apiList, total, err
 }
 
-func (apiService *MessageService) GetMessageById(id int) (api ncr.Message, err error) {
-	err = global.GVA_DB.Where("id = ?", id).First(&api).Error
-	return
+func (apiService *MessageService) GetMessageByname(name string) (list interface{}, err error) {
+	var apiList []ncr.Message
+	err = global.GVA_DB.Where("message_receive_name = ?", name).Find(&apiList).Error
+	return apiList, err
 }
 
 func (apiService *MessageService) UpdateMessage(api ncr.Message) (err error) {

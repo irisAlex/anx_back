@@ -63,8 +63,8 @@ func (s *MessageApi) GetMessageList(c *gin.Context) {
 	}, "获取成功", c)
 }
 
-func (s *MessageApi) GetMessageById(c *gin.Context) {
-	var idInfo request.GetById
+func (s *MessageApi) GetMessageByName(c *gin.Context) {
+	var idInfo request.GetByName
 	err := c.ShouldBindJSON(&idInfo)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
@@ -75,7 +75,7 @@ func (s *MessageApi) GetMessageById(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	api, err := MessageService.GetMessageById(idInfo.ID)
+	api, err := MessageService.GetMessageByname(idInfo.Name)
 	if err != nil {
 		global.GVA_LOG.Error("获取失败!", zap.Error(err))
 		response.FailWithMessage("获取失败", c)
