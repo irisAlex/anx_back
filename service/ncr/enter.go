@@ -6,4 +6,5 @@ type ServiceGroup struct {
 	ProjectService
 	ManageService
 	ComplaintService
+	MessageService
 }

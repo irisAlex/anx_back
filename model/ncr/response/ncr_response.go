@@ -20,3 +20,7 @@ type ManageResponse struct {
 type ComplaintResponse struct {
 	Ncr ncr.Complaint `json:"compliant"`
 }
+
+type MessageResponse struct {
+	Ncr ncr.Message `json:"message"`
+}

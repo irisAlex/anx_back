@@ -87,6 +87,7 @@ func (s *ManageRouter) InitManageRouter(Router *gin.RouterGroup) {
 		typeApiRouter.POST("updateSetStatus", typeRouterApi.SetStatus)   // 更新api
 		typeApiRouter.POST("updateParts", typeRouterApi.UpdateParts)     // 更新api
 		typeApiRouter.POST("updatePassDate", typeRouterApi.SetPassDate)  // 更新放行时间
+		typeApiRouter.POST("updateNcr", typeRouterApi.SetNcr)            // 更新放行时间
 	}
 	{
 		typeApiRouterWithoutRecord.POST("getAllManageList", typeRouterApi.GetManageList) // 获取所有api
@@ -110,6 +111,25 @@ func (s *ComplaintRouter) InitComplaintRouter(Router *gin.RouterGroup) {
 	}
 	{
 		typeApiRouterWithoutRecord.POST("getAllComplaintList", typeRouterApi.GetComplaintList) // 获取所有api
+	}
+
+}
+
+type MessageRouter struct{}
+
+func (s *ComplaintRouter) InitMessageRouter(Router *gin.RouterGroup) {
+	typeApiRouter := Router.Group("message").Use(middleware.OperationRecord())
+	typeApiRouterWithoutRecord := Router.Group("message")
+
+	typeRouterApi := v1.ApiGroupApp.NcrApiGroup.ComplaintApi
+	{
+		typeApiRouter.POST("createMessage", typeRouterApi.CreateComplaint)   // 创建Api
+		typeApiRouter.POST("deleteMessage", typeRouterApi.DeleteComplaint)   // 删除Api
+		typeApiRouter.POST("getMessageById", typeRouterApi.GetComplaintById) // 获取单条Api消息
+		typeApiRouter.POST("updateMessage", typeRouterApi.UpdateComplaint)   // 更新api
+	}
+	{
+		typeApiRouterWithoutRecord.POST("getAllMessageList", typeRouterApi.GetComplaintList) // 获取所有api
 	}
 
 }

@@ -103,6 +103,7 @@ type Manage struct {
 	A3_End                        string    `json:"a3_end" gorm:"comment:类别"`
 	A3_Setting                    string    `json:"a3_setting" gorm:"comment:类别"`
 	A3_Step                       int64     `json:"a3_step" gorm:"comment:类别"`
+	Is_Ncr                        bool      `json:"is_ncr" gorm:"comment:类别"`
 	// 类别
 }
 
@@ -146,4 +147,17 @@ type Complaint struct {
 
 func (Complaint) TableName() string {
 	return "ncr_complaint"
+}
+
+type Message struct {
+	global.GVA_MODEL
+	Message_Type         string `json:"message_type " gorm:"comment:类别"`
+	Message_Content      string `json:"message_content " gorm:"comment:类别"`
+	Message_Link         string `json:"message_link " gorm:"comment:类别"`
+	Message_Is_Active    bool   `json:"message_is_active " gorm:"comment:类别"`
+	Message_Receive_Name string `json:"message_receive_name " gorm:"comment:类别"`
+}
+
+func (Message) TableName() string {
+	return "ncr_message"
 }

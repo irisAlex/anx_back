@@ -16,4 +16,5 @@ var (
 	ProjectService   = service.ServiceGroupApp.NcrServiceGroup.ProjectService
 	ManageService    = service.ServiceGroupApp.NcrServiceGroup.ManageService
 	ComplaintService = service.ServiceGroupApp.NcrServiceGroup.ComplaintService
+	MessageService   = service.ServiceGroupApp.NcrServiceGroup.MessageService
 )

@@ -141,3 +141,8 @@ func (apiService *ManageService) UpdateParts(api ncr.Manage) (err error) {
 	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", api.ID).Updates(ncr.Manage{Status: api.Status, Deferred_Date: api.Deferred_Date}).Error
 	return err
 }
+
+func (apiService *ManageService) SetNcr(ID uint) (err error) {
+	err = global.GVA_DB.Model(&ncr.Message{}).Where("id = ?", ID).Update("is_ncr", true).Error
+	return err
+}
