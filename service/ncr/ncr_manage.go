@@ -76,12 +76,12 @@ func (apiService *ManageService) GetManageInfoList(api ncr.Manage, info request.
 
 	if info.Keyword != "" {
 		db = db.Where(" operation_type = ? ", info.Keyword)
-		db = db.Where(" is_ncr = ? ", true)
+		db = db.Where(" is_ncr = ? ", 1)
 	}
 
 	if api.Operation_Type != "" {
 		db = db.Where(" operation_type = ? ", api.Operation_Type)
-		db = db.Where(" is_ncr = ? ", true)
+		db = db.Where(" is_ncr = ? ", 1)
 	}
 
 	err = db.Count(&total).Error
