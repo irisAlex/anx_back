@@ -1,8 +1,6 @@
 package ncr
 
 import (
-	"fmt"
-
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/request"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/response"
@@ -18,16 +16,13 @@ import (
 
 type MessageApi struct{}
 
-func (s *MessageApi) CreateMessage(c *gin.Context) {
+func (s *MessageApi) SendMessage(c *gin.Context) {
 	var Message ncr.Message
 	err := c.ShouldBindJSON(&Message)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-
-	fmt.Println(Message)
-
 	err = utils.Verify(Message, utils.ApiVerify)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)

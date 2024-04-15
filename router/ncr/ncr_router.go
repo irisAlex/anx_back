@@ -119,17 +119,17 @@ type MessageRouter struct{}
 
 func (s *ComplaintRouter) InitMessageRouter(Router *gin.RouterGroup) {
 	typeApiRouter := Router.Group("message").Use(middleware.OperationRecord())
-	typeApiRouterWithoutRecord := Router.Group("message")
+	// typeApiRouterWithoutRecord := Router.Group("message")
 
-	typeRouterApi := v1.ApiGroupApp.NcrApiGroup.ComplaintApi
+	typeRouterApi := v1.ApiGroupApp.NcrApiGroup.MessageApi
 	{
-		typeApiRouter.POST("createMessage", typeRouterApi.CreateComplaint)   // 创建Api
-		typeApiRouter.POST("deleteMessage", typeRouterApi.DeleteComplaint)   // 删除Api
-		typeApiRouter.POST("getMessageById", typeRouterApi.GetComplaintById) // 获取单条Api消息
-		typeApiRouter.POST("updateMessage", typeRouterApi.UpdateComplaint)   // 更新api
+		typeApiRouter.POST("sendMessage", typeRouterApi.SendMessage) // 创建Api
+		// typeApiRouter.POST("deleteMessage", typeRouterApi.DeleteComplaint)   // 删除Api
+		// typeApiRouter.POST("getMessageById", typeRouterApi.GetComplaintById) // 获取单条Api消息
+		// typeApiRouter.POST("updateMessage", typeRouterApi.UpdateComplaint)   // 更新api
 	}
 	{
-		typeApiRouterWithoutRecord.POST("getAllMessageList", typeRouterApi.GetComplaintList) // 获取所有api
+		// typeApiRouterWithoutRecord.POST("getAllMessageList", typeRouterApi.GetComplaintList) // 获取所有api
 	}
 
 }

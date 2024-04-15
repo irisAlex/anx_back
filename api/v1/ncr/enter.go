@@ -8,6 +8,7 @@ type ApiGroup struct {
 	ProjectApi
 	ManageApi
 	ComplaintApi
+	MessageApi
 }
 
 var (
