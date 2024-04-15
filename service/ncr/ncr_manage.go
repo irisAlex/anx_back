@@ -144,6 +144,6 @@ func (apiService *ManageService) UpdateParts(api ncr.Manage) (err error) {
 }
 
 func (apiService *ManageService) SetNcr(ID uint) (err error) {
-	err = global.GVA_DB.Model(&ncr.Message{}).Where("id = ?", ID).Update("is_ncr", true).Error
+	err = global.GVA_DB.Model(&ncr.Message{}).Where("id = ?", ID).Update("is_ncr", 1).Error
 	return err
 }
