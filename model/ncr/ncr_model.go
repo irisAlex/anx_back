@@ -103,7 +103,7 @@ type Manage struct {
 	A3_End                        string    `json:"a3_end" gorm:"comment:类别"`
 	A3_Setting                    string    `json:"a3_setting" gorm:"comment:类别"`
 	A3_Step                       int64     `json:"a3_step" gorm:"comment:类别"`
-	Is_Ncr                        int64     `json:"is_ncr" gorm:"comment:类别"`
+	Is_Ncr                        bool      `json:"is_ncr" gorm:"comment:类别"`
 	// 类别
 }
 

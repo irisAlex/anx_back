@@ -76,12 +76,12 @@ func (apiService *ManageService) GetManageInfoList(api ncr.Manage, info request.
 
 	if info.Keyword != "" {
 		db = db.Where(" operation_type = ? ", info.Keyword)
-		db = db.Where(" is_ncr = ? ", 1)
+		db = db.Where(" is_ncr = ? ", true)
 	}
 
 	if api.Operation_Type != "" {
 		db = db.Where(" operation_type = ? ", api.Operation_Type)
-		db = db.Where(" is_ncr = ? ", 1)
+		db = db.Where(" is_ncr = ? ", true)
 	}
 
 	err = db.Count(&total).Error
@@ -144,6 +144,6 @@ func (apiService *ManageService) UpdateParts(api ncr.Manage) (err error) {
 }
 
 func (apiService *ManageService) SetNcr(ID uint) (err error) {
-	err = global.GVA_DB.Model(&ncr.Message{}).Where("id = ?", ID).Update("is_ncr", 1).Error
+	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", ID).Update("is_ncr", true).Error
 	return err
 }
