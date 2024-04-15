@@ -45,12 +45,24 @@ func (apiService *SupplierApiService) GetAPIInfoList(api ncr.Supplier, info requ
 	db := global.GVA_DB.Model(&ncr.Supplier{})
 	var apiList []ncr.Supplier
 
-	if api.Country != "" {
-		db = db.Where("country LIKE ?", "%"+api.Country+"%")
+	if api.Addr != "" {
+		db = db.Where("addr LIKE ?", api.Addr)
 	}
 
-	if api.Genre != "" {
-		db = db.Where("genre LIKE ?", "%"+api.Genre+"%")
+	if api.Contacts != "" {
+		db = db.Where("contacts LIKE ?", api.Contacts)
+	}
+
+	if api.Email != "" {
+		db = db.Where("email LIKE ?", api.Email)
+	}
+
+	if api.Phone != "" {
+		db = db.Where("phone LIKE ?", api.Phone)
+	}
+
+	if api.Product != "" {
+		db = db.Where("product LIKE ?", api.Product)
 	}
 
 	if api.Name != "" {
