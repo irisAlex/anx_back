@@ -106,7 +106,7 @@ func Routers() *gin.Engine {
 		ncrRouter.InitProjectRouter(PrivateGroup)
 		ncrRouter.InitManageRouter(PrivateGroup)
 		ncrRouter.InitComplaintRouter(PrivateGroup)
-
+		ncrRouter.InitMessageRouter(PrivateGroup)
 	}
 
 	global.GVA_LOG.Info("router register success")
