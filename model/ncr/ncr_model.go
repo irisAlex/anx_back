@@ -8,9 +8,12 @@ import (
 
 type Supplier struct {
 	global.GVA_MODEL
-	Country string `json:"country" gorm:"comment:城市"` // 城市
-	Genre   string `json:"genre" gorm:"comment:类别"`   // 类别
-	Name    string `json:"name" gorm:"comment:名称"`    // 名称
+	Name     string `json:"name" gorm:"comment:名称"` // 名称
+	Addr     string `json:"addr" gorm:"comment:名称"`
+	Email    string `json:"email" gorm:"comment:名称"`
+	Phone    string `json:"phone" gorm:"comment:名称"`
+	Product  string `json:"product" gorm:"comment:名称"`
+	Contacts string `json:"contacts" gorm:"comment:名称"`
 }
 
 func (Supplier) TableName() string {
