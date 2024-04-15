@@ -151,11 +151,11 @@ func (Complaint) TableName() string {
 
 type Message struct {
 	global.GVA_MODEL
-	Message_Type         string `json:"message_type " gorm:"comment:类别"`
-	Message_Content      string `json:"message_content " gorm:"comment:类别"`
-	Message_Link         string `json:"message_link " gorm:"comment:类别"`
-	Message_Is_Active    bool   `json:"message_is_active " gorm:"comment:类别"`
-	Message_Receive_Name string `json:"message_receive_name " gorm:"comment:类别"`
+	Message_Type         string `json:"message_type" gorm:"comment:类别"`
+	Message_Content      string `json:"message_content" gorm:"comment:类别"`
+	Message_Link         string `json:"message_link" gorm:"comment:类别"`
+	Message_Is_Active    bool   `json:"message_is_active" gorm:"comment:类别"`
+	Message_Receive_Name string `json:"message_receive_name" gorm:"comment:类别"`
 }
 
 func (Message) TableName() string {
