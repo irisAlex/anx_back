@@ -132,7 +132,7 @@ func (s *MessageApi) UpdateMessage(c *gin.Context) {
 }
 
 func (s *MessageApi) SetStatus(c *gin.Context) {
-	var api ncr.SetStatus
+	var api request.GetById
 	err := c.ShouldBindJSON(&api)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
@@ -143,7 +143,7 @@ func (s *MessageApi) SetStatus(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	err = MessageService.SetNcrStatus(uint(api.ID), api.Status)
+	err = MessageService.SetMessageState(uint(api.ID))
 	if err != nil {
 		global.GVA_LOG.Error("更新状态失败!", zap.Error(err))
 		response.FailWithMessage("更新状态失败", c)
