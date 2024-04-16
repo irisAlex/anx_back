@@ -73,11 +73,15 @@ func (apiService *MessageService) GetMessageInfoList(api ncr.Message, info reque
 func (apiService *MessageService) GetMessageByname(name string) (list interface{}, total int64, err error) {
 	var apiList []ncr.Message
 	db := global.GVA_DB.Model(&ncr.Message{})
+	err = db.Where("message_receive_name = ? and message_is_active = ?", name, true).Find(&apiList).Error
+	if err != nil {
+		return apiList, total, err
+	}
+
 	err = db.Count(&total).Error
 	if err != nil {
 		return apiList, total, err
 	}
-	err = db.Where("message_receive_name = ? and message_is_active = ?", name, true).Find(&apiList).Error
 	return apiList, total, err
 }
 
