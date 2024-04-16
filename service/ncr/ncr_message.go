@@ -94,6 +94,6 @@ func (apiService *MessageService) UpdateMessage(api ncr.Message) (err error) {
 }
 
 func (apiService *MessageService) SetMessageState(ID uint) (err error) {
-	err = global.GVA_DB.Model(&ncr.Message{}).Where("id = ?", ID).Update("message_is_active = ?", false).Error
+	err = global.GVA_DB.Model(&ncr.Message{}).Where("id = ?", ID).Update("message_is_active", false).Error
 	return err
 }
