@@ -107,7 +107,7 @@ func (s *ManageApi) CloseAllById(c *gin.Context) {
 		response.FailWithMessage("关闭失败", c)
 		return
 	}
-	response.FailWithMessage("关闭成功", c)
+	response.Ok(c)
 	//response("获取成功", c)
 	//response.OkWithDetailed(ncrep.ManageResponse{Ncr: api}, "获取成功", c)
 }
