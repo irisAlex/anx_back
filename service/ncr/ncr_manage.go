@@ -134,7 +134,7 @@ func (apiService *ManageService) SetNcrStatus(ID uint, st string) (err error) {
 }
 
 func (apiService *ManageService) SetNcrPassDate(ID uint, op_type string) (err error) {
-	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", ID).Updates(ncr.Manage{Operation_Type: op_type, Pass_Date: time.Now()}).Error
+	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", ID).Updates(ncr.Manage{Operation_Type: op_type, Pass_Date: time.Now(), Is_Ncr: true}).Error
 	return err
 }
 
