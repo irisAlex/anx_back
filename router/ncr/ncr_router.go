@@ -88,6 +88,7 @@ func (s *ManageRouter) InitManageRouter(Router *gin.RouterGroup) {
 		typeApiRouter.POST("updateParts", typeRouterApi.UpdateParts)     // 更新api
 		typeApiRouter.POST("updatePassDate", typeRouterApi.SetPassDate)  // 更新放行时间
 		typeApiRouter.POST("updateNcr", typeRouterApi.SetNcr)            // 更新放行时间
+		typeApiRouter.POST("closeAllById", typeRouterApi.CloseAllById)   // 更新放行时间
 	}
 	{
 		typeApiRouterWithoutRecord.POST("getAllManageList", typeRouterApi.GetManageList) // 获取所有api

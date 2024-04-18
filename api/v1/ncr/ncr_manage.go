@@ -89,6 +89,29 @@ func (s *ManageApi) GetManageById(c *gin.Context) {
 	response.OkWithDetailed(ncrep.ManageResponse{Ncr: api}, "获取成功", c)
 }
 
+func (s *ManageApi) CloseAllById(c *gin.Context) {
+	var idInfo request.GetById
+	err := c.ShouldBindJSON(&idInfo)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	err = utils.Verify(idInfo, utils.IdVerify)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	err = ManageService.CloseAllById(uint(idInfo.ID))
+	if err != nil {
+		global.GVA_LOG.Error("关闭失败!", zap.Error(err))
+		response.FailWithMessage("关闭失败", c)
+		return
+	}
+	response.FailWithMessage("关闭成功", c)
+	//response("获取成功", c)
+	//response.OkWithDetailed(ncrep.ManageResponse{Ncr: api}, "获取成功", c)
+}
+
 func (s *ManageApi) DeleteManage(c *gin.Context) {
 	var api ncr.Manage
 	err := c.ShouldBindJSON(&api)

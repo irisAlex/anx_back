@@ -138,6 +138,11 @@ func (apiService *ManageService) SetNcrPassDate(ID uint, op_type string) (err er
 	return err
 }
 
+func (apiService *ManageService) CloseAllById(ID uint) (err error) {
+	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", ID).Updates(ncr.Manage{Operation_Type: "-1", Is_Ncr: false}).Error
+	return err
+}
+
 func (apiService *ManageService) UpdateParts(api ncr.Manage) (err error) {
 	err = global.GVA_DB.Model(&ncr.Manage{}).Where("id = ?", api.ID).Updates(ncr.Manage{Status: api.Status, Deferred_Date: api.Deferred_Date}).Error
 	return err
