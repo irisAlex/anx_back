@@ -125,8 +125,8 @@ func (s *MessageApi) GetMessageMessageByNcrID(c *gin.Context) {
 	}
 	message, err := MessageService.GetMessageByNcrID(api.NcrID)
 	if err != nil {
-		global.GVA_LOG.Error("获取消息失败!", zap.Error(err))
-		response.FailWithMessage("获取消息失败", c)
+		global.GVA_LOG.Error("当前用户没有操作权限!", zap.Error(err))
+		response.FailWithMessage("当前用户没有操作权限", c)
 		return
 	}
 
