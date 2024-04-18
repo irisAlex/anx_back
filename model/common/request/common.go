@@ -17,6 +17,10 @@ type GetByName struct {
 	Name string `json:"name" form:"id"` // 主键ID
 }
 
+type GetByNcrID struct {
+	NcrID int64 `json:"ncr_id" form:"ncr_id"`
+}
+
 func (r *GetById) Uint() uint {
 	return uint(r.ID)
 }

@@ -112,18 +112,18 @@ func (s *MessageApi) DeleteMessage(c *gin.Context) {
 }
 
 func (s *MessageApi) GetMessageMessageByNcrID(c *gin.Context) {
-	var api ncr.Message
+	var api request.GetByNcrID
 	err := c.ShouldBindJSON(&api)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	err = utils.Verify(api.GVA_MODEL, utils.IdVerify)
+	err = utils.Verify(api, utils.IdVerify)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	message, err := MessageService.GetMessageByNcrID(api.Ncr_ID)
+	message, err := MessageService.GetMessageByNcrID(api.NcrID)
 	if err != nil {
 		global.GVA_LOG.Error("获取消息失败!", zap.Error(err))
 		response.FailWithMessage("获取消息失败", c)
