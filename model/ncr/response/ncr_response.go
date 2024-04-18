@@ -22,5 +22,5 @@ type ComplaintResponse struct {
 }
 
 type MessageResponse struct {
-	Ncr interface{} `json:"message"`
+	Ncr ncr.Message `json:"message"`
 }

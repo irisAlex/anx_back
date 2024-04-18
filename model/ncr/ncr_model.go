@@ -156,6 +156,7 @@ type Message struct {
 	Message_Link         string `json:"message_link" gorm:"comment:类别"`
 	Message_Is_Active    bool   `json:"message_is_active" gorm:"comment:类别"`
 	Message_Receive_Name string `json:"message_receive_name" gorm:"comment:类别"`
+	Ncr_ID               int64  `json:"ncr_id" gorm:"comment:类别"`
 }
 
 func (Message) TableName() string {

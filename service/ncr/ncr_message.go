@@ -85,6 +85,16 @@ func (apiService *MessageService) GetMessageByname(name string) (list interface{
 	return apiList, total, err
 }
 
+func (apiService *MessageService) GetMessageByNcrID(nid int64) (ncr.Message, error) {
+	var apiList ncr.Message
+	db := global.GVA_DB.Model(&ncr.Message{})
+	err := db.Where("ncr_id = ? ", nid).First(&apiList).Error
+	if err != nil {
+		return ncr.Message{}, err
+	}
+	return apiList, nil
+}
+
 func (apiService *MessageService) UpdateMessage(api ncr.Message) (err error) {
 	err = global.GVA_DB.Save(&api).Error
 	if err != nil {

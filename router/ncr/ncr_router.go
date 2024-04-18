@@ -125,8 +125,9 @@ func (s *ComplaintRouter) InitMessageRouter(Router *gin.RouterGroup) {
 	{
 		typeApiRouter.POST("sendMessage", typeRouterApi.SendMessage) // 创建Api
 		// typeApiRouter.POST("deleteMessage", typeRouterApi.DeleteComplaint)   // 删除Api
-		typeApiRouter.POST("getMessageByName", typeRouterApi.GetMessageByName) // 获取单条Api消息
-		typeApiRouter.POST("setMessageState", typeRouterApi.SetStatus)         // 更新api
+		typeApiRouter.POST("getMessageByName", typeRouterApi.GetMessageByName)          // 获取单条Api消息
+		typeApiRouter.POST("setMessageState", typeRouterApi.SetStatus)                  // 更新api
+		typeApiRouter.POST("getMessageByNcrID", typeRouterApi.GetMessageMessageByNcrID) // 更新api
 	}
 	{
 		// typeApiRouterWithoutRecord.POST("getAllMessageList", typeRouterApi.GetComplaintList) // 获取所有api

@@ -6,6 +6,7 @@ import (
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/response"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/ncr"
 	ncreq "github.com/flipped-aurora/gin-vue-admin/server/model/ncr/request"
+	ncrep "github.com/flipped-aurora/gin-vue-admin/server/model/ncr/response"
 	"github.com/flipped-aurora/gin-vue-admin/server/utils"
 
 	"go.uber.org/zap"
@@ -108,6 +109,28 @@ func (s *MessageApi) DeleteMessage(c *gin.Context) {
 		return
 	}
 	response.OkWithMessage("删除成功", c)
+}
+
+func (s *MessageApi) GetMessageMessageByNcrID(c *gin.Context) {
+	var api ncr.Message
+	err := c.ShouldBindJSON(&api)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	err = utils.Verify(api.GVA_MODEL, utils.IdVerify)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	message, err := MessageService.GetMessageByNcrID(api.Ncr_ID)
+	if err != nil {
+		global.GVA_LOG.Error("获取消息失败!", zap.Error(err))
+		response.FailWithMessage("获取消息失败", c)
+		return
+	}
+
+	response.OkWithDetailed(ncrep.MessageResponse{Ncr: message}, "获取成功", c)
 }
 
 func (s *MessageApi) UpdateMessage(c *gin.Context) {
