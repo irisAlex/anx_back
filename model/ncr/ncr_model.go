@@ -104,6 +104,7 @@ type Manage struct {
 	A3_Setting                    string    `json:"a3_setting" gorm:"comment:类别"`
 	A3_Step                       int64     `json:"a3_step" gorm:"comment:类别"`
 	Is_Ncr                        bool      `json:"is_ncr" gorm:"comment:类别"`
+	A3_Issues                     string    `json:"a3_issues" gorm:"comment:类别"`
 	// 类别
 }
 
