@@ -100,7 +100,7 @@ func (apiService *ManageService) GetManageInfoList(api ncr.Manage, info request.
 				if desc {
 					OrderStr = order + " desc"
 				} else {
-					OrderStr = order
+					OrderStr = order + "desc"
 				}
 			} else { // didn't match any order key in `orderMap`
 				err = fmt.Errorf("非法的排序字段: %v", order)
