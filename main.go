@@ -1,8 +1,6 @@
 package main
 
 import (
-	"time"
-
 	"go.uber.org/zap"
 
 	"github.com/flipped-aurora/gin-vue-admin/server/core"
@@ -23,10 +21,10 @@ import (
 // @name                        x-token
 // @BasePath                    /
 func main() {
-	time.Local = time.UTC
-	loc, _ := time.LoadLocation("Asia/Shanghai")
-	// 设置全局时区
-	time.Local = loc
+	// time.Local = time.UTC
+	// loc, _ := time.LoadLocation("Asia/Shanghai")
+	// // 设置全局时区
+	// time.Local = loc
 	global.GVA_VP = core.Viper() // 初始化Viper
 	initialize.OtherInit()
 	global.GVA_LOG = core.Zap() // 初始化zap日志库

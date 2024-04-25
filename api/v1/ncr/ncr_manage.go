@@ -2,6 +2,7 @@ package ncr
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/request"
@@ -10,6 +11,7 @@ import (
 	ncreq "github.com/flipped-aurora/gin-vue-admin/server/model/ncr/request"
 	ncrep "github.com/flipped-aurora/gin-vue-admin/server/model/ncr/response"
 	"github.com/flipped-aurora/gin-vue-admin/server/utils"
+	"github.com/flipped-aurora/gin-vue-admin/server/utils/excel"
 
 	"go.uber.org/zap"
 
@@ -257,4 +259,32 @@ func (s *ManageApi) Down(c *gin.Context) {
 		return
 	}
 	response.OkWithMessage("更新配做成功", c)
+}
+
+func (s *ManageApi) DownExcelFile(c *gin.Context) {
+	var idInfo request.GetById
+	id := c.Query("id")
+	if id == "" {
+		response.FailWithMessage("id 为空", c)
+		return
+	}
+	idInfo.ID = strToint(id)
+	api, err := ManageService.GetManageById(idInfo.ID)
+	if err != nil {
+		global.GVA_LOG.Error("获取失败!", zap.Error(err))
+		response.FailWithMessage("获取失败", c)
+		return
+	}
+	err = excel.CreateFile(api)
+	if err != nil {
+		global.GVA_LOG.Error("Excel 文件生成失败!", zap.Error(err))
+		response.FailWithMessage("Excel 文件生成失败!", c)
+		return
+	}
+	response.Ok(c)
+}
+
+func strToint(s string) int {
+	i, _ := strconv.Atoi(s)
+	return i
 }
