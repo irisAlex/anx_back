@@ -281,7 +281,7 @@ func (s *ManageApi) DownExcelFile(c *gin.Context) {
 		response.FailWithMessage("Excel 文件生成失败!", c)
 		return
 	}
-	response.Ok(c)
+	response.OkWithDetailed(ncrep.ManageResponse{Ncr: api}, "下载成功", c)
 }
 
 func strToint(s string) int {
