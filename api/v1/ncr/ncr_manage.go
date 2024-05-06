@@ -2,6 +2,7 @@ package ncr
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
@@ -19,6 +20,35 @@ import (
 )
 
 type ManageApi struct{}
+
+func (s *ManageApi) GetFile(c *gin.Context) {
+	f, _ := os.Open("A3.xlsx")
+	defer f.Close()
+
+	p := make([]byte, 1024)
+
+	w := c.Writer
+	w.Header().Set("Content-Type", "application/vnd.ms-excel")
+	w.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=\"%s\"", "A3.xlsx"))
+
+	var readErr error
+	var readCount int
+
+	for {
+		readCount, readErr = f.Read(p)
+		if readErr != nil {
+			break
+		}
+		if readCount > 0 {
+			if _, err := w.Write(p[:readCount]); err != nil {
+				break
+			}
+		}
+	}
+	w.Flush()
+	//	c.File("A3.xlsx")
+	response.Ok(c)
+}
 
 func (s *ManageApi) CreateManage(c *gin.Context) {
 	var Manage ncr.Manage

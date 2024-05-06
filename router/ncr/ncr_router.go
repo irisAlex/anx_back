@@ -90,6 +90,7 @@ func (s *ManageRouter) InitManageRouter(Router *gin.RouterGroup) {
 		typeApiRouter.POST("updateNcr", typeRouterApi.SetNcr)            // 更新放行时间
 		typeApiRouter.POST("closeAllById", typeRouterApi.CloseAllById)   // 更新放行时间
 		typeApiRouter.GET("downFile", typeRouterApi.DownExcelFile)       // 更新放行时间
+		typeApiRouter.GET("down", typeRouterApi.GetFile)                 // 更新放行时间
 
 	}
 	{

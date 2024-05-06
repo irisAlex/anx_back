@@ -6,7 +6,6 @@ import (
 	"net/url"
 
 	"github.com/gin-gonic/gin"
-	"github.com/xuri/excelize/v2"
 )
 
 type Response struct {
@@ -57,16 +56,22 @@ func FailWithDetailed(data interface{}, message string, c *gin.Context) {
 	Result(ERROR, data, message, c)
 }
 
-func DownFile(c *gin.Context, f *excelize.File) {
-	filename := url.QueryEscape("A3.xlsx")
+func DownFile(c *gin.Context) {
+	// ctx.Writer.Header().Add("Content-Type", "application/octet-stream")
+	// ctx.Writer.Header().Add("Content-disposition", "attachment;filename="+fileName)
+	// ctx.Writer.Header().Add("Content-Transfer-Encoding", "binary")
+	// _ = file.Write(ctx.Writer)
+
+	filename := url.QueryEscape("a.txt")
 
 	c.Writer.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
 	c.Writer.Header().Set("Pragma", "no-cache")
 	c.Writer.Header().Set("Expires", "0")
 	c.Writer.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename*=utf-8''%s", filename))
-	c.Writer.Header().Set("Content-Type", "application/vnd.ms-excel")
+	//c.Writer.Header().Set("Content-Type", "application/vnd.ms-excel")
 	c.Writer.Header().Set("Content-Transfer-Encoding", "binary")
-	c.File("/uploads/file/" + filename)
+	c.Writer.Flush()
+	//c.File("/uploads/file/" + filename)
 	// c.Writer.WriteHeader(http.StatusOK)
 	// c.Header("Content-Disposition", "attachment; filename=hello.txt")
 	// c.Header("Content-Type", "application/text/plain")
