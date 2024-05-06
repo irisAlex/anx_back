@@ -235,8 +235,8 @@ func CreateFile(m ncr.Manage) error {
 			18, "宋体", black, "center", "center", false))
 		ControlsWriteExcelPicture(f, "AQ"+intTostr(x), "AU"+intTostr(y), val.State, SetStyle(f,
 			18, "宋体", black, "center", "center", false))
-		x += 18
-		y += 18
+		x += 6
+		y += 6
 	}
 
 	//问题4
