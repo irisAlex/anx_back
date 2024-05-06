@@ -242,8 +242,8 @@ func CreateFile(m ncr.Manage) error {
 	//问题4
 	ControlsWriteExcel(f, "A"+intTostr(x), "AU"+intTostr(y), "Root cause analysis Ishikawa 原因分析鱼骨图", SetStyle(f,
 		20, "Frutiger LT 55 Roman", black, "left", "center", true))
-	x += 66
-	y += 66
+	x += 6
+	y += 6
 	// 去掉 Base64 编码的头部
 	imgBase64 := strings.Replace(m.A3_Img_Base64, "data:image/png;base64,", "", 1)
 
@@ -260,8 +260,8 @@ func CreateFile(m ncr.Manage) error {
 	// }
 	InsertImg(f, "A"+intTostr(x), "AU"+intTostr(y), SetStyle(f,
 		20, "Frutiger LT 55 Roman", black, "left", "center", false), imgBytes)
-	x += 6
-	y += 6
+	x += 66
+	y += 66
 	//问题5
 	ControlsWriteExcel(f, "A"+intTostr(x), "AU"+intTostr(y), "Root cause analysis (5 x why)根本原因确认(5个WHY)", SetStyle(f,
 		20, "Frutiger LT 55 Roman", black, "left", "center", true))
