@@ -1,9 +1,12 @@
 package excel
 
 import (
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
+	"log"
 	"strconv"
+	"strings"
 	"time"
 
 	_ "image/jpeg"
@@ -237,12 +240,26 @@ func CreateFile(m ncr.Manage) error {
 	}
 
 	//问题4
-	ControlsWriteExcel(f, "A"+intTostr(x), "AU"+intTostr(y), "Root cause analysis (Ishikawa) 原因分析（鱼骨图）", SetStyle(f,
+	ControlsWriteExcel(f, "A"+intTostr(x), "AU"+intTostr(y), "Root cause analysis Ishikawa 原因分析鱼骨图", SetStyle(f,
 		20, "Frutiger LT 55 Roman", black, "left", "center", true))
 	x += 6
 	y += 6
+	// 去掉 Base64 编码的头部
+	imgBase64 := strings.Replace(m.A3_Img_Base64, "data:image/png;base64,", "", 1)
+
+	// 解码 Base64 字符串
+	imgBytes, err := base64.StdEncoding.DecodeString(imgBase64)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// // 将字节数组转为图片
+	// img, _, err := image.Decode(strings.NewReader(string(imgBytes)))
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 	InsertImg(f, "A"+intTostr(x), "AU"+intTostr(y), SetStyle(f,
-		20, "Frutiger LT 55 Roman", black, "left", "center", false), m.A3_Img_Base64)
+		20, "Frutiger LT 55 Roman", black, "left", "center", false), imgBytes)
 	x += 6
 	y += 6
 	//问题5
@@ -438,11 +455,11 @@ func SetStyle(f *excelize.File, size int, font string, color string, horizontal,
 	return withSty
 }
 
-func InsertImg(f *excelize.File, startCell, endCell string, styleID int, imgBase4 string) {
+func InsertImg(f *excelize.File, startCell, endCell string, styleID int, imgBase4 []byte) {
 	f.MergeCell(Sheet, startCell, endCell)
 	err := f.AddPictureFromBytes("Sheet1", startCell, &excelize.Picture{
 		Extension: ".png",
-		File:      []byte(imgBase4),
+		File:      imgBase4,
 	})
 	if err != nil {
 		fmt.Println(err)
