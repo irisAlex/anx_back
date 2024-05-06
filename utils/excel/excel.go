@@ -260,8 +260,8 @@ func CreateFile(m ncr.Manage) error {
 	// }
 	InsertImg(f, "A"+intTostr(x), "AU"+intTostr(y), SetStyle(f,
 		20, "Frutiger LT 55 Roman", black, "left", "center", false), imgBytes)
-	x += 66
-	y += 66
+	x += 54
+	y += 54
 	//问题5
 	ControlsWriteExcel(f, "A"+intTostr(x), "AU"+intTostr(y), "Root cause analysis (5 x why)根本原因确认(5个WHY)", SetStyle(f,
 		20, "Frutiger LT 55 Roman", black, "left", "center", true))
