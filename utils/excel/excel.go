@@ -235,15 +235,15 @@ func CreateFile(m ncr.Manage) error {
 			18, "宋体", black, "center", "center", false))
 		ControlsWriteExcelPicture(f, "AQ"+intTostr(x), "AU"+intTostr(y), val.State, SetStyle(f,
 			18, "宋体", black, "center", "center", false))
-		x += 6
-		y += 6
+		x += 18
+		y += 18
 	}
 
 	//问题4
 	ControlsWriteExcel(f, "A"+intTostr(x), "AU"+intTostr(y), "Root cause analysis Ishikawa 原因分析鱼骨图", SetStyle(f,
 		20, "Frutiger LT 55 Roman", black, "left", "center", true))
-	x += 60
-	y += 60
+	x += 66
+	y += 66
 	// 去掉 Base64 编码的头部
 	imgBase64 := strings.Replace(m.A3_Img_Base64, "data:image/png;base64,", "", 1)
 
