@@ -242,7 +242,7 @@ func CreateFile(m ncr.Manage) error {
 	x += 6
 	y += 6
 	InsertImg(f, "A"+intTostr(x), "AU"+intTostr(y), SetStyle(f,
-		20, "Frutiger LT 55 Roman", black, "left", "center", true), m.A3_Img_Base64)
+		20, "Frutiger LT 55 Roman", black, "left", "center", false), m.A3_Img_Base64)
 	x += 6
 	y += 6
 	//问题5
