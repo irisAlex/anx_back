@@ -2,6 +2,7 @@ package excel
 
 import (
 	"encoding/json"
+	"fmt"
 	"strconv"
 	"time"
 
@@ -240,6 +241,10 @@ func CreateFile(m ncr.Manage) error {
 		20, "Frutiger LT 55 Roman", black, "left", "center", true))
 	x += 6
 	y += 6
+	InsertImg(f, "A"+intTostr(x), "AU"+intTostr(y), SetStyle(f,
+		20, "Frutiger LT 55 Roman", black, "left", "center", true), m.A3_Img_Base64)
+	x += 6
+	y += 6
 	//问题5
 	ControlsWriteExcel(f, "A"+intTostr(x), "AU"+intTostr(y), "Root cause analysis (5 x why)根本原因确认(5个WHY)", SetStyle(f,
 		20, "Frutiger LT 55 Roman", black, "left", "center", true))
@@ -431,4 +436,16 @@ func SetStyle(f *excelize.File, size int, font string, color string, horizontal,
 
 	withSty, _ := f.NewStyle(withoutFillStyle)
 	return withSty
+}
+
+func InsertImg(f *excelize.File, startCell, endCell string, styleID int, imgBase4 string) {
+	f.MergeCell(Sheet, startCell, endCell)
+	err := f.AddPictureFromBytes("Sheet1", startCell, &excelize.Picture{
+		Extension: ".png",
+		File:      []byte(imgBase4),
+	})
+	if err != nil {
+		fmt.Println(err)
+	}
+	f.SetCellStyle(Sheet, startCell, endCell, styleID) //组长
 }
